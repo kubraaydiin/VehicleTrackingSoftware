@@ -16,3 +16,30 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.row {
+    margin: 10px;
+}
+
+.car-header {
+    font-weight: bold;
+}
+
+.car-item {
+    padding: 4px;
+}
+
+    .car-item:hover {
+        background-color: #eee;
+        cursor: pointer;
+    }
+
+#googleMap {
+    width: 100%;
+    height: 300px;
+    margin: 10px auto;
+}
+
+#items div:focus {
+    background-color: #eee;
+}
