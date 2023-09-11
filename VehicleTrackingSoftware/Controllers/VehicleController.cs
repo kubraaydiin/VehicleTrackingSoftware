@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VehicleTrackingSoftware.Business.Operations;
+using VehicleTrackingSoftware.Models;
 
 namespace VehicleTrackingSoftware.Controllers
 {
@@ -13,7 +14,12 @@ namespace VehicleTrackingSoftware.Controllers
 
         public IActionResult Index()
         {
-            var vehicles = _vehicleOperations.Vehicles();
+            var vehicles = _vehicleOperations.Vehicles().Select(x => new VehicleViewModel
+            {
+                NumberPlate = x.NumberPlate,
+                StartingPoint = x.StartingPoint,
+                Destination = x.Destination,
+            }).ToList();
 
             return View(vehicles);
         }
